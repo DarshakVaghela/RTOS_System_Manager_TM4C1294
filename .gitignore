@@ -1,0 +1,14 @@
+# CCS build output folders
+Debug/
+Release/
+
+# Compiler generated files
+*.out
+*.map
+*.obj
+*.d
+
+# Eclipse / CCS settings
+.settings/
+ccs.debug/
+
