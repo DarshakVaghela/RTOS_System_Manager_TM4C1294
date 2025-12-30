@@ -23,6 +23,8 @@ It demonstrates **real-time multitasking**, **interrupt handling**, **inter-task
 
 ## 🧱 System Architecture
 
+![System Architecture](images/RTOS_System_Manager_TM4C1294_flowhart.png)
+
 ```
 +---------------------+
 | UART CLI Task | <-- Command parsing (status, tasks)
