@@ -23,6 +23,7 @@ It demonstrates **real-time multitasking**, **interrupt handling**, **inter-task
 
 ## 🧱 System Architecture
 
+```
 +---------------------+
 | UART CLI Task | <-- Command parsing (status, tasks)
 +---------------------+
@@ -45,11 +46,13 @@ It demonstrates **real-time multitasking**, **interrupt handling**, **inter-task
 +---------------------+
 | Monitor Task | <-- vTaskList() diagnostics
 +---------------------+
+```
 
 ---
 
 ## 📂 Project Folder Structure
 
+```
 RTOS_System_Manager_TM4C1294/
 │
 ├── app/ # Application-level RTOS tasks
@@ -72,7 +75,16 @@ RTOS_System_Manager_TM4C1294/
 │
 ├── main.c # System entry point
 └── README.md
+```
 
+---
+
+## 🛠️ Build Environment
+
+- **Host OS:** Ubuntu Linux
+- **IDE:** Code Composer Studio (CCS v12.x)
+- **Target MCU:** TM4C1294 (ARM Cortex-M4F)
+- **RTOS Kernel:** FreeRTOS (manually integrated)
 
 ---
 
@@ -96,16 +108,19 @@ RTOS_System_Manager_TM4C1294/
 ## 🚀 Functional Description
 
 ### 1️⃣ Heartbeat Task
+
 - Toggles onboard LED (PN1)
 - Verifies scheduler timing and RTOS startup
 
 ### 2️⃣ Button Task
+
 - Button interrupt on **Port J (PJ0)**
 - ISR notifies task using `xTaskNotifyFromISR()`
 - Demonstrates **interrupt-to-task synchronization**
 
 ### 3️⃣ UART CLI Task
-- UART0 connected via ICDI USB
+
+- UART0 connected via ICDI (USB virtual COM port)
 - Interrupt-driven RX
 - Queue-based ISR → task communication
 - Supported commands:
@@ -113,7 +128,7 @@ RTOS_System_Manager_TM4C1294/
 status   → System health check
 tasks    → Task list (printed by monitor task)
 
-## 4️⃣ Monitor Task
+### 4️⃣ Monitor Task
 
 - Periodically prints RTOS task information  
 - Uses:
@@ -123,7 +138,7 @@ tasks    → Task list (printed by monitor task)
   - Priority
   - Stack high-water mark
 
-## 5️⃣ RTOS Hook Functions
+### 5️⃣ RTOS Hook Functions
 
 Implemented for system robustness:
 
@@ -150,31 +165,39 @@ Implemented for system robustness:
    
 ### ✅ Expected Output
 
-RTOS CLI Ready
->
+> RTOS CLI Ready
+
+---
 
 ## 💻 Example Commands
-> status
-System OK
-> tasks
-(Task list printed every 5 seconds by monitor task)
+status
+> System OK
+
+tasks
+> (Task list printed every 5 seconds by monitor task)
+
+---
 
 ## 🧠 RTOS Concepts Demonstrated
--Preemptive scheduling
--Task priorities & stack sizing
--ISR-safe APIs
--Task notifications vs queues
--FreeRTOS configuration & hooks
--Runtime diagnostics & debugging
+- Preemptive scheduling
+- Task priorities & stack sizing
+- ISR-safe APIs
+- Task notifications vs queues
+- FreeRTOS configuration & hooks
+- Runtime diagnostics & debugging
+
+---
 
 ## 📌 Why This Project Matters
 
 This project demonstrates how RTOS is used in real embedded products, including:
 
--Manual FreeRTOS kernel integration
--Debugging linker & configuration issues
--Correct ISR design
--Scalable firmware architecture
+- Manual FreeRTOS kernel integration
+- Debugging linker & configuration issues
+- Correct ISR design
+- Scalable firmware architecture
+
+---
 
 ## 👤 Author
 
@@ -183,3 +206,10 @@ Embedded Software Engineer
 
 **Skills:**  
 Embedded C, FreeRTOS, ARM Cortex-M, UART, GPIO, Interrupts, Code Composer Studio
+
+---
+
+## 📄 License
+
+This project is provided for learning and demonstration purposes.
+
