@@ -110,7 +110,6 @@ RTOS_System_Manager_TM4C1294/
 - Queue-based ISR → task communication
 - Supported commands:
 
-```text
 status   → System health check
 tasks    → Task list (printed by monitor task)
 
@@ -151,7 +150,6 @@ Implemented for system robustness:
    
 ### ✅ Expected Output
 
-```text
 RTOS CLI Ready
 >
 
@@ -161,7 +159,7 @@ System OK
 > tasks
 (Task list printed every 5 seconds by monitor task)
 
-##🧠 RTOS Concepts Demonstrated
+## 🧠 RTOS Concepts Demonstrated
 -Preemptive scheduling
 -Task priorities & stack sizing
 -ISR-safe APIs
@@ -169,7 +167,7 @@ System OK
 -FreeRTOS configuration & hooks
 -Runtime diagnostics & debugging
 
-##📌 Why This Project Matters
+## 📌 Why This Project Matters
 
 This project demonstrates how RTOS is used in real embedded products, including:
 
