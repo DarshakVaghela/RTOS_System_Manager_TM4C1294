@@ -25,31 +25,6 @@ It demonstrates **real-time multitasking**, **interrupt handling**, **inter-task
 
 ![System Architecture](images/RTOS_System_Manager_TM4C1294_flowhart.png)
 
-```
-+---------------------+
-| UART CLI Task | <-- Command parsing (status, tasks)
-+---------------------+
-|
-| Queue (ISR → Task)
-|
-+---------------------+
-| UART ISR (RX) |
-+---------------------+
-
-+---------------------+ +----------------------+
-| Button ISR (PJ0) | -----> | Button Task |
-+---------------------+ | (Task Notification) |
-+----------------------+
-
-+---------------------+
-| Heartbeat Task | <-- LED status indication
-+---------------------+
-
-+---------------------+
-| Monitor Task | <-- vTaskList() diagnostics
-+---------------------+
-```
-
 ---
 
 ## 📂 Project Folder Structure
